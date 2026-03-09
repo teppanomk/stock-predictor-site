@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Stock Prediction Dashboard</title>
+<title>Executive Stock Intelligence Dashboard</title>
+
 <link rel="stylesheet" href="style.css">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
 
-<h1>Stock Market Prediction Dashboard</h1>
+<h1>Executive Stock Intelligence Dashboard</h1>
 
 <div class="search">
 <input id="stockInput" placeholder="Enter stock symbol (AAPL)">
@@ -18,32 +22,137 @@
 
 <canvas id="priceChart"></canvas>
 
-<section>
-<h2>1. Technical Analysis</h2>
-<p>Uses indicators like RSI, MACD, and moving averages to analyze price trends.</p>
+<section class="dashboard">
+
+<h2>Technical Analysis Dashboard</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Current Price</h3>
+<p id="price">--</p>
+</div>
+
+<div class="card">
+<h3>RSI</h3>
+<p id="rsi">--</p>
+</div>
+
+<div class="card">
+<h3>50 Day MA</h3>
+<p id="ma50">--</p>
+</div>
+
+<div class="card">
+<h3>200 Day MA</h3>
+<p id="ma200">--</p>
+</div>
+
+</div>
+
 </section>
 
-<section>
-<h2>2. Fundamental Analysis</h2>
-<p>Analyzes company financial data such as revenue, earnings, and P/E ratio.</p>
+
+<section class="dashboard">
+
+<h2>Fundamental Analysis Dashboard</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>P/E Ratio</h3>
+<p id="pe">--</p>
+</div>
+
+<div class="card">
+<h3>Market Cap</h3>
+<p id="marketcap">--</p>
+</div>
+
+<div class="card">
+<h3>EPS</h3>
+<p id="eps">--</p>
+</div>
+
+</div>
+
 </section>
 
-<section>
-<h2>3. Quantitative Models</h2>
-<p>Uses statistical models like regression and time-series forecasting.</p>
+
+<section class="dashboard">
+
+<h2>Quantitative Prediction</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Predicted Price</h3>
+<p id="prediction">--</p>
+</div>
+
+<div class="card">
+<h3>Volatility</h3>
+<p id="volatility">--</p>
+</div>
+
+</div>
+
 </section>
 
-<section>
-<h2>4. Sentiment Analysis</h2>
-<p>Examines market sentiment from news and social media.</p>
+
+<section class="dashboard">
+
+<h2>Sentiment Analysis</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Market Sentiment</h3>
+<p id="sentiment">Neutral</p>
+</div>
+
+<div class="card">
+<h3>Positive News</h3>
+<p id="posnews">--</p>
+</div>
+
+<div class="card">
+<h3>Negative News</h3>
+<p id="negnews">--</p>
+</div>
+
+</div>
+
 </section>
 
-<section>
-<h2>5. Macroeconomic Factors</h2>
-<p>Interest rates, inflation, and economic growth influence stock prices.</p>
+
+<section class="dashboard">
+
+<h2>Macroeconomic Indicators</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Interest Rate</h3>
+<p>5.25%</p>
+</div>
+
+<div class="card">
+<h3>Inflation</h3>
+<p>3.1%</p>
+</div>
+
+<div class="card">
+<h3>GDP Growth</h3>
+<p>2.4%</p>
+</div>
+
+</div>
+
 </section>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
