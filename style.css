@@ -1,21 +1,19 @@
 body{
-font-family: Arial;
+
+font-family:Arial;
 background:#0f172a;
 color:white;
 text-align:center;
-padding:30px;
+padding:20px;
+
 }
 
-section{
-background:#1e293b;
-margin:20px auto;
-padding:20px;
-border-radius:10px;
-width:70%;
+h1{
+margin-bottom:30px;
 }
 
 .search{
-margin-bottom:20px;
+margin-bottom:30px;
 }
 
 input{
@@ -34,4 +32,34 @@ cursor:pointer;
 canvas{
 max-width:900px;
 margin:auto;
+margin-bottom:40px;
+}
+
+.dashboard{
+width:90%;
+margin:auto;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+}
+
+.card h3{
+font-size:14px;
+color:#94a3b8;
+}
+
+.card p{
+font-size:24px;
+color:#22c55e;
 }
