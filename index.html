@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stock Prediction Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h1>Stock Market Prediction Dashboard</h1>
+
+<div class="search">
+<input id="stockInput" placeholder="Enter stock symbol (AAPL)">
+<button onclick="loadStock()">Load Data</button>
+</div>
+
+<canvas id="priceChart"></canvas>
+
+<section>
+<h2>1. Technical Analysis</h2>
+<p>Uses indicators like RSI, MACD, and moving averages to analyze price trends.</p>
+</section>
+
+<section>
+<h2>2. Fundamental Analysis</h2>
+<p>Analyzes company financial data such as revenue, earnings, and P/E ratio.</p>
+</section>
+
+<section>
+<h2>3. Quantitative Models</h2>
+<p>Uses statistical models like regression and time-series forecasting.</p>
+</section>
+
+<section>
+<h2>4. Sentiment Analysis</h2>
+<p>Examines market sentiment from news and social media.</p>
+</section>
+
+<section>
+<h2>5. Macroeconomic Factors</h2>
+<p>Interest rates, inflation, and economic growth influence stock prices.</p>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
