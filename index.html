@@ -1,158 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Executive Stock Intelligence Dashboard</title>
+<title>AI Knowledge Bot</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+#chat{
+width:420px;
+margin:auto;
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+}
+
+#messages{
+height:300px;
+overflow-y:auto;
+text-align:left;
+}
+
+input{
+width:70%;
+padding:10px;
+}
+
+button{
+padding:10px;
+background:#6366f1;
+color:white;
+border:none;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h1>Executive Stock Intelligence Dashboard</h1>
+<h1>🤖 AI Knowledge Bot</h1>
 
-<div class="search">
-<input id="stockInput" placeholder="Enter stock symbol (AAPL)">
-<button onclick="loadStock()">Load Data</button>
-</div>
+<div id="chat">
 
-<canvas id="priceChart"></canvas>
+<div id="messages"></div>
 
-<section class="dashboard">
-
-<h2>Technical Analysis Dashboard</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Current Price</h3>
-<p id="price">--</p>
-</div>
-
-<div class="card">
-<h3>RSI</h3>
-<p id="rsi">--</p>
-</div>
-
-<div class="card">
-<h3>50 Day MA</h3>
-<p id="ma50">--</p>
-</div>
-
-<div class="card">
-<h3>200 Day MA</h3>
-<p id="ma200">--</p>
-</div>
+<input id="question" placeholder="Ask something">
+<button onclick="ask()">Send</button>
 
 </div>
 
-</section>
+<script>
 
+const API_URL="https://script.google.com/macros/s/AKfycbyNKHAXfqPIGOZI6So4SYd9bCl3_ggVY71cgIJMWOMntvy1LusVCGVS1hCjGY1vno3Y/exec";
 
-<section class="dashboard">
+async function ask(){
 
-<h2>Fundamental Analysis Dashboard</h2>
+let q=document.getElementById("question").value;
 
-<div class="grid">
+document.getElementById("messages").innerHTML +=
+"<p><b>You:</b> "+q+"</p>";
 
-<div class="card">
-<h3>P/E Ratio</h3>
-<p id="pe">--</p>
-</div>
+let res=await fetch(API_URL,{
+method:"POST",
+body:JSON.stringify({question:q})
+});
 
-<div class="card">
-<h3>Market Cap</h3>
-<p id="marketcap">--</p>
-</div>
+let data=await res.json();
 
-<div class="card">
-<h3>EPS</h3>
-<p id="eps">--</p>
-</div>
+document.getElementById("messages").innerHTML +=
+"<p><b>AI:</b> "+data.reply+"</p>";
 
-</div>
+}
 
-</section>
-
-
-<section class="dashboard">
-
-<h2>Quantitative Prediction</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Predicted Price</h3>
-<p id="prediction">--</p>
-</div>
-
-<div class="card">
-<h3>Volatility</h3>
-<p id="volatility">--</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="dashboard">
-
-<h2>Sentiment Analysis</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Market Sentiment</h3>
-<p id="sentiment">Neutral</p>
-</div>
-
-<div class="card">
-<h3>Positive News</h3>
-<p id="posnews">--</p>
-</div>
-
-<div class="card">
-<h3>Negative News</h3>
-<p id="negnews">--</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="dashboard">
-
-<h2>Macroeconomic Indicators</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Interest Rate</h3>
-<p>5.25%</p>
-</div>
-
-<div class="card">
-<h3>Inflation</h3>
-<p>3.1%</p>
-</div>
-
-<div class="card">
-<h3>GDP Growth</h3>
-<p>2.4%</p>
-</div>
-
-</div>
-
-</section>
-
-<script src="script.js"></script>
+</script>
 
 </body>
-
 </html>
